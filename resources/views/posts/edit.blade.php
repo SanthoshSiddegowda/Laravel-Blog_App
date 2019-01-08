@@ -1,0 +1,20 @@
+@extends ('layouts.app')
+
+@section('content')
+<h1>Edit  Posts</h1>
+
+{!! Form::open(['action' => ['postcontroller@update',$post->id], 'method' => 'POST', 'class' => 'form']) !!}
+    <div class="form-group">
+      {{Form::label('title','Title')}}
+      {{Form::text('title',$post->title,['class'=>'form-control','placeholder'=>'Title'])}}
+    </div>
+    <div class="form-group">
+      {{Form::label('body','Body')}}
+      {{Form::textarea('body',$post->body,['id'=>'hello','class'=>'form-control','placeholder'=>'write the message!!'])}}
+    </div>
+
+    {{Form::hidden('_method','PUT')}}
+    {{Form::submit('submit',['class'=>'btn btn-primary'])}}
+{!! Form::close() !!}
+
+@endsection
