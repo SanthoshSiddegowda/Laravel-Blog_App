@@ -1,1 +1,3 @@
-## Santhosh J s
+## Blog App
+
+blog app using laravel
